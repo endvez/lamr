@@ -1,0 +1,24 @@
+fof(ax0,axiom,?[W] : (wolf(W))).
+fof(ax1,axiom,![W] : ((wolf(W)) => (animal(W)))).
+fof(ax2,axiom,?[F] : (fox(F))).
+fof(ax3,axiom,![F] : ((fox(F)) => (animal(F)))).
+fof(ax4,axiom,?[B] : (bird(B))).
+fof(ax5,axiom,![B] : ((bird(B)) => (animal(B)))).
+fof(ax6,axiom,?[C] : (caterpillar(C))).
+fof(ax7,axiom,![C] : ((caterpillar(C)) => (animal(C)))).
+fof(ax8,axiom,?[S] : (snail(S))).
+fof(ax9,axiom,![S] : ((snail(S)) => (animal(S)))).
+fof(ax10,axiom,?[G] : (grain(G))).
+fof(ax11,axiom,![G] : ((grain(G)) => (plant(G)))).
+fof(ax12,axiom,![X] : ((animal(X)) => ((![Y] : ((plant(Y)) => (likeseating(X,Y)))) | (![Y] : (((animal(Y)) & ((smaller(Y,X)) & (?[Z] : ((plant(Z)) & (likeseating(Y,Z)))))) => (likeseating(X,Y))))))).
+fof(ax13,axiom,![C] : (![B] : (((caterpillar(C)) & (bird(B))) => (smaller(C,B))))).
+fof(ax14,axiom,![S] : (![B] : (((snail(S)) & (bird(B))) => (smaller(S,B))))).
+fof(ax15,axiom,![F] : (![B] : (((fox(F)) & (bird(B))) => (smaller(B,F))))).
+fof(ax16,axiom,![F] : (![W] : (((fox(F)) & (wolf(W))) => (smaller(F,W))))).
+fof(ax17,axiom,![W] : (![F] : (((wolf(W)) & (fox(F))) => (~(likeseating(W,F)))))).
+fof(ax18,axiom,![W] : (![G] : (((wolf(W)) & (grain(G))) => (~(likeseating(W,G)))))).
+fof(ax19,axiom,![B] : (![C] : (((bird(B)) & (caterpillar(C))) => (likeseating(B,C))))).
+fof(ax20,axiom,![B] : (![S] : (((bird(B)) & (snail(S))) => (~(likeseating(B,S)))))).
+fof(ax21,axiom,![C] : ((caterpillar(C)) => (?[P] : ((plant(P)) & (likeseating(C,P)))))).
+fof(ax22,axiom,![S] : ((snail(S)) => (?[P] : ((plant(P)) & (likeseating(S,P)))))).
+fof(c1,conjecture,?[X] : (?[Y] : ((animal(X)) & ((animal(Y)) & ((likeseating(X,Y)) & (?[G] : ((grain(G)) & (likeseating(Y,G))))))))).
